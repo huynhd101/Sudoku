@@ -4,6 +4,12 @@ def solve_backtrack(board):
 def check(board, position, guess):
     """
     Returns True if the guess is a valid number to be placed at position
+    Parameters:
+    -board (2D list): a board of numbers where empty spaces are represented by '0'
+    -position ((int, int)): row and column of where we are checking for validity
+    -guess (int): the value we are guessing
+    Returns:
+    -boolean
     """
 
     #Check Row
@@ -29,3 +35,16 @@ def check(board, position, guess):
 
     return True
 
+def find_empty(board):
+    """
+    Finds on the board an empty spot
+    Parameters:
+    board (2D list): a board of numbers where empty spaces are represented by '0'
+    Returns:
+    (int, int) row and col
+    """
+    for i in range(len(board)):
+        for j in range(len(board[0])):
+            if board[i][j] == 0:
+                return (i,j)
+    return None
